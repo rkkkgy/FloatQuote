@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 用户数据（勿提交到仓库）
+config.json
+
+# 构建产物
+build/
+dist/
+*.spec
+
+# 测试/调试临时文件
+snapshot*.png
+smoke_out*.txt
+test_out*.txt
+
+# 系统
+Thumbs.db
+.DS_Store

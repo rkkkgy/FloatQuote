@@ -1,0 +1,12 @@
+{
+  "stocks": ["sh600519", "sz000001", "sz300750"],
+  "refresh_seconds": 3,
+  "chart_refresh_seconds": 30,
+  "auto_switch_seconds": 10,
+  "switch_effect": "fade",
+  "display_count": 1,
+  "pos": [200, 120],
+  "size_collapsed": [167, 19],
+  "size_expanded": [192, 161],
+  "always_on_top": true
+}
