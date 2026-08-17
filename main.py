@@ -4,13 +4,34 @@
 用法:
     python main.py              # 正常运行
     python main.py --snapshot x.png   # 测试模式：启动后截图保存并退出
+
+启动时会在项目目录写入 .floatquote.pid（进程 ID），退出时自动清理，
+供桌面启停脚本精确定位进程。
 """
+import os
 import sys
+from pathlib import Path
 
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QApplication
 
 from widgets import FloatQuoteWindow
+
+PID_FILE = Path(__file__).resolve().parent / ".floatquote.pid"
+
+
+def _write_pid():
+    try:
+        PID_FILE.write_text(str(os.getpid()), encoding="utf-8")
+    except OSError:
+        pass
+
+
+def _remove_pid():
+    try:
+        PID_FILE.unlink(missing_ok=True)
+    except OSError:
+        pass
 
 
 def main() -> int:
@@ -37,7 +58,11 @@ def main() -> int:
 
         QTimer.singleShot(4500, snap)
 
-    return app.exec()
+    _write_pid()
+    try:
+        return app.exec()
+    finally:
+        _remove_pid()
 
 
 if __name__ == "__main__":
