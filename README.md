@@ -60,11 +60,12 @@ python main.py
 
 ```
 FloatQuote/
-├── main.py          # 入口
+├── main.py          # 入口（写入/清理 .floatquote.pid 供启停脚本使用）
 ├── widgets.py       # 悬浮窗主窗口：多行列表、点击展开、动画、托盘、后台刷新
 ├── chart.py         # 分时图自绘组件（含新浪降级图）
 ├── quotes.py        # 腾讯行情封装（报价 / 分时数据 / 股票搜索）
 ├── config.py        # config.json 读写
+├── scripts/         # Windows 启停脚本（start/stop/restart，含 PID 防重复检测）
 ├── tests/
 │   └── test_smoke.py  # 冒烟测试（29 项）
 ├── requirements.txt
@@ -72,6 +73,8 @@ FloatQuote/
 ├── .gitignore
 └── LICENSE
 ```
+
+> `scripts/` 下的 .bat 脚本可直接双击使用：从仓库 `scripts/` 目录运行时会自动定位项目根目录；若复制到其他位置，请修改脚本开头的 `APP_DIR`。脚本通过 `.floatquote.pid` 精确定位应用进程，重复启动会被拦截。
 
 ## 🧪 测试
 
