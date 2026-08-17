@@ -4,7 +4,7 @@ rem Locate project dir: if this script lives in <repo>\scripts, use parent; othe
 if exist "%~dp0..\main.py" (
     set "APP_DIR=%~dp0.."
 ) else (
-    set "APP_DIR=D:\DeepSeek Harness\FloatQuote"
+    set "APP_DIR=D:\development\FloatQuote"
 )
 set "PID_FILE=%APP_DIR%\.floatquote.pid"
 set "PYW=C:\Users\rkkkgy\AppData\Local\Programs\Python\Python311\pythonw.exe"
