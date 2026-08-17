@@ -92,6 +92,10 @@ pyinstaller -F -w -n FloatQuote main.py
 # 生成 dist/FloatQuote.exe，双击即用
 ```
 
+- 打包后 `config.json` 与 `.floatquote.pid` 生成在 **exe 同目录**（源码运行时在项目目录），两者数据互不影响
+- **升级流程**：改完源码 → 重新执行上面的打包命令 → 分发新 exe；源码始终是唯一开发产物
+- 首次运行若被杀毒软件误报（PyInstaller 无签名所致），添加信任即可
+
 ## ⚠️ 免责声明
 
 - 数据来自腾讯/新浪公开行情接口，仅供学习研究，**不构成任何投资建议**
