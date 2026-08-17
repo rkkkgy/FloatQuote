@@ -2,9 +2,22 @@
 """配置读写：config.json（自选股、刷新间隔、窗口位置等）。"""
 import json
 import re
+import sys
 from pathlib import Path
 
-APP_DIR = Path(__file__).resolve().parent
+
+def app_dir() -> Path:
+    """应用数据目录：打包成 exe 时取 exe 所在目录；源码运行时取项目目录。
+
+    若直接用 Path(__file__)，打包后 __file__ 指向临时解压目录，
+    config.json 会被写到临时目录、退出即丢。
+    """
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+
+APP_DIR = app_dir()
 CONFIG_PATH = APP_DIR / "config.json"
 
 DEFAULTS = {

@@ -10,14 +10,15 @@
 """
 import os
 import sys
-from pathlib import Path
 
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QApplication
 
+from config import app_dir
 from widgets import FloatQuoteWindow
 
-PID_FILE = Path(__file__).resolve().parent / ".floatquote.pid"
+# 打包成 exe 后指向 exe 所在目录（见 config.app_dir）
+PID_FILE = app_dir() / ".floatquote.pid"
 
 
 def _write_pid():
