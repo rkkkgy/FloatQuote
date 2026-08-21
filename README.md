@@ -1,8 +1,33 @@
 # 📈 FloatQuote — 悬浮行情小工具
 
-常驻桌面最上层的极简股票行情悬浮窗：平时只显示一条窄窄的价格条（可同时显示多只股票），
-**点击**某一行展开详细报价与当日分时图，移开鼠标 3 秒自动收起，也可以点「返回」立即收起。
-数据来自腾讯免费行情接口。
+常驻桌面最上层的极简行情悬浮窗：平时只显示一条窄价格条（可同时显示多只标的），
+点击某一行展开详细报价与分时/K 线图。数据来自腾讯、东方财富公开接口。
+
+**当前推荐：Windows 安装包（C# / WPF / .NET 8）。** Python 原版仍保留在仓库根目录，见下文「Python 原版」。
+
+## 💻 Windows 安装包（推荐）
+
+1. 下载 [Releases](https://github.com/rkkkgy/FloatQuote/releases) 中的 `FloatQuote-Setup-*.exe`，或从源码生成。
+2. 双击安装（当前用户，无需管理员）。
+3. 自选股配置保存在 `%LocalAppData%\FloatQuote\config.json`。
+
+从源码打包：
+
+```powershell
+cd win
+powershell -ExecutionPolicy Bypass -File scripts\build-installer.ps1
+```
+
+生成 `win\dist\FloatQuote-Setup-1.1.0.exe`。开发运行：
+
+```bash
+cd win
+dotnet run
+```
+
+C# 版说明见 [`win/README.md`](win/README.md)。
+
+## Python 原版
 
 > Python 3.11 + PyQt6，仅支持 Windows（针对 A 股习惯设计，红涨绿跌）。
 

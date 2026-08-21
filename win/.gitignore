@@ -1,0 +1,26 @@
+# Python / .NET
+__pycache__/
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# 用户数据
+config.json
+.floatquote.pid
+
+# 构建产物
+publish/
+dist/
+setup/*.exe
+
+# 测试/调试
+snapshot*.png
+qa_*.png
+qa_log.txt
+smoke_out*.txt
+
+# 系统
+Thumbs.db
+.DS_Store

@@ -1,0 +1,16 @@
+{
+  "stocks": ["sh600519", "sz000001", "sz300750", "xau"],
+  "categories": [
+    { "name": "A股", "visible": true, "stocks": ["sh600519", "sz000001", "sz300750"] },
+    { "name": "黄金", "visible": true, "stocks": ["xau"] }
+  ],
+  "refresh_seconds": 3,
+  "chart_refresh_seconds": 30,
+  "auto_switch_seconds": 10,
+  "switch_effect": "fade",
+  "display_count": 1,
+  "pos": [200, 120],
+  "size_collapsed": [167, 19],
+  "size_expanded": [460, 400],
+  "always_on_top": true
+}
